@@ -1,0 +1,12 @@
+{
+  "name": "MazeBall",
+  "description": "MazeBall Click Game",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["scripting"],
+  "host_permissions": ["https://game.ikeno.top/"],
+  "action": {
+      "default_popup": "popup.html",
+      "default_title": "MazeBall"
+  }
+}

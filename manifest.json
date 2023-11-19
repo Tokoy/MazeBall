@@ -1,6 +1,6 @@
 {
   "name": "MazeBall",
-  "description": "MazeBall Click Game",
+  "description": "鼠标左键控制小球左右移动，鼠标右键控制小球向下移动。",
   "version": "1.0",
   "manifest_version": 3,
   "permissions": ["scripting"],
@@ -8,5 +8,8 @@
   "action": {
       "default_popup": "popup.html",
       "default_title": "MazeBall"
+  },
+  "icons": {
+    "128": "img/mazeball.png"
   }
 }

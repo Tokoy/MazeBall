@@ -19,3 +19,6 @@ If the mouse is to the left of the ball, it will move left. If the mouse is to t
 2. 鼠标右键控制小球向下移动。
 3. 倒计时归零则游戏结束。
 4. 碰到红色障碍物则游戏结束。
+
+
+![screenshot](img/screenshot.png)

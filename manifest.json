@@ -3,7 +3,6 @@
   "description": "鼠标左键控制小球左右移动，鼠标右键控制小球向下移动。",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": ["scripting"],
   "host_permissions": ["https://game.ikeno.top/"],
   "action": {
       "default_popup": "popup.html",

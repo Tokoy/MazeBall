@@ -39,15 +39,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //startCountdown
   function startCountdown() {
-    intervalId = setInterval(updateCountdown, 10); // 每 10 毫秒更新一次倒计时
+    intervalId = setInterval(updateCountdown, 10); // update countdown every 10 seconds
   }
 
   //updateCountdown
   function updateCountdown() {
-    timeRemaining -= 10; // 每次减少 10 毫秒
+    timeRemaining -= 10; // reduce time remaining
 
     if (timeRemaining <= 0) {
-      clearInterval(intervalId); // 清除计时器
+      clearInterval(intervalId); // clear the interval
       countdownDisplay.textContent = "00:00:000";
       gameover();
     }
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const seconds = Math.floor((timeRemaining / 1000) % 60);
     const milliseconds = Math.floor((timeRemaining % 1000) / 10);
 
-    // 格式化时间，并更新倒计时显示
+    // timeformat，update interval
     countdownDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds
       .toString()
       .padStart(2, '0')}.${milliseconds.toString().padStart(2, '0')}`;
@@ -110,14 +110,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function checkspace(itemindex){
-      // 获取周围一圈的数字
-      var row = Math.floor(itemindex / gridColumns); // 当前数字所在的行索引
-      var col = itemindex % gridColumns; // 当前数字所在的列索引
+      var row = Math.floor(itemindex / gridColumns); 
+      var col = itemindex % gridColumns;
 
       for (var i = row - 1; i <= row + 1; i++) {
         for (var j = col - 1; j <= col + 1; j++) {
           if (i >= 0 && i < gridRows && j >= 0 && j < gridColumns) {
-            var removeindex = i * gridColumns  + j; // 计算周围一圈数字的索引
+            var removeindex = i * gridColumns  + j; 
             bombIndices = bombIndices.filter(item => item !== removeindex);
             gridItems[removeindex].classList.remove('boom-item'); 
           }
@@ -152,12 +151,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // 创建基本路径
     let startX = Math.floor(rows / 2);
     let startY = Math.floor(cols / 2);
     carve(startX, startY);
 
-    // 根据密度和复杂度参数随机添加障碍物
     for (let x = 0; x < rows; x++) {
         for (let y = 0; y < cols; y++) {
             if ((Math.random() < density && !pathGrid[x][y]) || (Math.random() < complexity && pathGrid[x][y])) {
@@ -265,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Calculate new black item index for downward movement
     var newRow = Math.floor((ballItemIndex)/ 10) + 1;
-    // 判断是否是最后一行
+    // is last item
     if(newRow != gridRows){
       // Remove current black item
       gridItems[ballItemIndex].classList.remove('ball-item');
@@ -274,9 +271,9 @@ document.addEventListener('DOMContentLoaded', function() {
       ballItemIndex = newballItemIndex;
       gridItems[ballItemIndex].classList.add('ball-item');
     }
-    // 每次点击，增加点击次数
+    // add clickcount
     clickCount++;
-    // 更新点击次数显示
+    // update click display
     clickCountElement.textContent = clickCount.toString();
     //check gameover
     checkGameOver(ballItemIndex);
@@ -284,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //left click
   gridContainer.addEventListener('click', function(e) {
-    //如果鼠标点击到间隙，是不会触发判断的
+
     var clickedItemIndex = Array.from(gridItems).indexOf(e.target);
 
     if (clickedItemIndex !== -1) {
@@ -366,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const thead = document.createElement('thead');
     const tbody = document.createElement('tbody');
   
-    // 创建表头
+    // table header
     const headerRow = document.createElement('tr');
     const headers = ['No.', 'Region', 'Level', 'Click', 'Score', 'Time/s'];
     headers.forEach(headerText => {
@@ -378,13 +375,12 @@ document.addEventListener('DOMContentLoaded', function() {
     thead.appendChild(headerRow);
     table.appendChild(thead);
   
-    // 填充表格数据
     data.forEach((item, index) => {
       const dataRow = document.createElement('tr');
       const { region, level, click, time } = item.data;
       const score = item.score;
   
-      // 序号列
+      // id
       const indexCell = document.createElement('td');
       indexCell.textContent = index + 1;
       dataRow.appendChild(indexCell);
@@ -395,7 +391,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dataRow.appendChild(td);
       });
   
-      // 根据条件设置行背景颜色
+      // user score
       if (extensionId === item.id) {
         dataRow.style.color = 'blue';
       }

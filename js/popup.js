@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var gridItems;
   var level = 1;
   var bombIndices = [];
-  let timeRemaining = 13 * 1000; 
+  let timeRemaining = 15 * 1000; 
   let intervalId; 
   var startTime = new Date();
   var endTime;
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //addTime
   function addTime(){
-    timeRemaining += 5 * 1000;
+    timeRemaining += level * 1000;
   }
 
   //pauseTime

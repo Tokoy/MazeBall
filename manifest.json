@@ -1,13 +1,14 @@
 {
   "name": "MazeBall",
-  "description": "鼠标左键控制小球左右移动，鼠标右键控制小球向下移动。",
+  "description": "Use the left mouse button to control the ball's left and right direction, and use the right mouse button to make the ball move downward. ",
   "version": "1.0",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "background": {
-    "scripts": ["background.js"]
+    "service_worker": "background.js"
   },
-  "permissions": ["storage","https://game.ikeno.top/*"],
-  "browser_action": {
+  "permissions": ["storage"],
+  "host_permissions": ["https://game.ikeno.top/"],
+  "action": {
       "default_popup": "popup.html",
       "default_title": "MazeBall"
   },

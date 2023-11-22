@@ -1,7 +1,7 @@
 {
   "name": "MazeBall",
-  "description": "Use the left mouse button to control the ball's left and right direction, and use the right mouse button to make the ball move downward. ",
-  "version": "1.0",
+  "description": "Left-click to control the ball's horizontal movement, right-click to move it downward.",
+  "version": "1.1",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"

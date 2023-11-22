@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
   document.body.style.width = '250px';
   var currentHeight;
@@ -31,7 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var btnup = document.getElementById('btnup');
   var btnrty = document.getElementById('btnrty');
   var github = document.getElementById('github');
-  var extensionId = chrome.runtime.id;
+  var uniqueId;
+  chrome.storage.local.get('uniqueId', function(result) {
+     uniqueId = result.uniqueId;
+     console.log(uniqueId);
+  });
 
   //INIT THE GAME
   init();
@@ -64,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //addTime
   function addTime(){
-    timeRemaining += level * 1000;
+    timeRemaining += 5 * 1000;
   }
 
   //pauseTime
@@ -209,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
       myHeaders.append("Content-Type", "application/json");
       var totaltime = Math.floor((endTime - startTime) / 1000);
       var raw = JSON.stringify({
-        "key": extensionId,
+        "key": uniqueId,
         "value": `{\"level\":${level},\"click\":${clickCount},\"time\":${totaltime}}`
       });
       
@@ -392,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   
       // user score
-      if (extensionId === item.id) {
+      if (uniqueId === item.id) {
         dataRow.style.color = 'blue';
       }
       

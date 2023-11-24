@@ -1,4 +1,7 @@
 # MazeBall
+extension：[MazeBall](https://chromewebstore.google.com/detail/mazeball/jgaajcmknemljmpkgijmkabjopgljcmg?hl=zh-CN)
+web-demo：[MazeBall-web](https://ball.ikeno.top/)
+
 ## Introduction:
 MazeBall is a Chrome extension game where players control a ball by clicking the left and right mouse buttons on the page. The goal is to navigate the ball to the bottom destination to proceed to the next level.
 
@@ -11,6 +14,9 @@ If the mouse is to the left of the ball, it will move left. If the mouse is to t
 
 
 # MazeBall
+商店地址：[MazeBall](https://chromewebstore.google.com/detail/mazeball/jgaajcmknemljmpkgijmkabjopgljcmg?hl=zh-CN)
+网页demo：[MazeBall-web](https://ball.ikeno.top/)
+
 ## 简介：
 这是一个Chrome的插件小游戏，玩法是在页面上点击鼠标的左右键，控制小球移动，到达最下层目的地则进入下一关。
 ## 规则：
